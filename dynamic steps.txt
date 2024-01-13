@@ -1,0 +1,5 @@
+1. Each and every game card should working when search.
+2. Each and every game card should also working as categories search.
+3. When user click on each card the details of clicked game should be shows.
+4. Add to cart functionality
+5. Favourite Games functionality
