@@ -98,68 +98,6 @@
 
 
 </section>
-{{-- 
-<div class="cart-container">
-
-</div> --}}
-
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-
-<script>
-  $(document).ready(function(){
-    $('.buy-btn').click(function (e){
-      e.preventDefault();
-      var game_id = $(this).closest('.product_data').find('.game_id').val();
-      var game_name = $(this).closest('.product_data').find('.game_name').text();
-      var game_image = $(this).closest('.product_data').find('.game_image').attr('src');
-      var game_price = $(this).closest('.product_data').find('.game_price').text();
-      var game_qty = $(this).closest('.product_data').find('.game_qty').val();
-      var game_desc = $(this).closest('.product_data').find('.game_desc').text();
-       
-       
-
-
-      $.ajaxSetup({
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-});
-
-      
-      $.ajax({
-        method: "POST",
-        url: "/add-to-cart",
-        data:{
-          'game_id': game_id,
-          'game_name': game_name,
-          'game_image': game_image,
-          'game_price': game_price,
-          'game_qty': game_qty,
-          'game_desc': game_desc,
-        },
-
-        success: function(response){
-        
-                   
-                 
-
-                    // Update localStorage with the new cart number
-                  
-          alert(response.status)
-         
-         
-
-        },
-        error: function (error) {
-        console.log(error);
-    }
-      })
-
-
-    })
-  })
-</script>
 
 
 

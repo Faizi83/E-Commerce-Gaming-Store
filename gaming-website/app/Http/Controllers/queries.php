@@ -1,9 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-use Illuminate\Pagination\Paginator;
 use App\Models\Product;
 use App\Models\game_cart;
 use Cart;
@@ -173,9 +171,15 @@ class queries extends Controller
     
     
 
+    public function CartCount()
+    {
+        $cartCount = game_cart::count(); // Adjust this according to your actual logic for counting items in the cart
+
+        return response()->json(['cartCount' => $cartCount]);
+    }
     
     
-}
+};
 
 
 

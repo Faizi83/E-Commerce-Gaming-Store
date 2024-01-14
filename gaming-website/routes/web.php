@@ -50,7 +50,7 @@ Route::post('/add-to-cart', [queries::class, 'addTocart']);
 Route::delete('/delete/{id}', [queries::class, 'removeItem'])->name('cart.remove');
 
 
-Route::post('/add-to-favorites/{id}', [queries::class, 'addToFavorites']);
+
 
 
 
@@ -60,8 +60,7 @@ Route::get('/games', [queries::class, 'search']);
 
 
 
-
-
+Route::get('/get-cart-count', [queries::class, 'CartCount']);
 
 
 

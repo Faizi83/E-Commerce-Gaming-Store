@@ -201,31 +201,3 @@
 
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-
-<script>
-    $(document).ready(function () {
-        $('.favorite-icon').on('click', function () {
-            var productId = $(this).data('product-id');
-
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-            $.ajax({
-                url: '/add-to-favorites/' + productId,
-                type: 'POST',
-                success: function (response) {
-                    console.log(response.message);
-                },
-                error: function (error) {
-                    console.log(error.responseJSON.message);
-                }
-            });
-        });
-    });
-</script>
-

@@ -71,42 +71,6 @@
     </div>
 @endforeach
 
-    {{-- <div class="cart-item pt-5 mt-3">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="cart-img">
-          <img src="/images/hitman.jpeg" alt="Product Image" class="img-fluid">
-        </div>
-        </div>
-        <div class="col-md-6">
-          <h5>Product Name</h5>
-          <p>Product description goes here.</p>
-        </div>
-        <div class="col-md-3 text-end">
-          <p>Price: $19.99</p>
-          <p>Quantity: 2</p>
-          <button class="btn btn-danger"> <i class="fas fa-trash"></i> Remove</button>
-        </div>
-      </div>
-    </div>
-    {{-- <div class="cart-item pt-5 mt-3">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="cart-img">
-          <img src="/images/Mafia 3.jpeg" alt="Product Image" class="img-fluid">
-        </div>
-        </div>
-        <div class="col-md-6">
-          <h5>Product Name</h5>
-          <p>Product description goes here.</p>
-        </div>
-        <div class="col-md-3 text-end">
-          <p>Price: $19.99</p>
-          <p>Quantity: 2</p>
-         <button class="btn btn-danger"> <i class="fas fa-trash"></i> Remove</button>
-        </div>
-      </div>
-    </div>  --}}
 
 
 
@@ -129,49 +93,12 @@
 
   
 </body>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-$(document).ready(function () {
-    $('.remove-item').on('click', function () {
-        var itemId = $(this).closest('.cart-item').data('item-id');
-        var currentButton = $(this);
-
-        $.ajaxSetup({
-        headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-             }
-           });
-
-        $.ajax({
-            url: '/delete/' + itemId,
-            type: 'DELETE',
-            success: function (response) {
-                console.log(response.message);
-                currentButton.closest('.cart-item').remove();
-            },
-            error: function (error) {
-                console.log(error.responseJSON.message);
-            }
-            
-        });
-    });
-});
-
-</script>
 
 
 
+ 
 
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 

@@ -25,7 +25,7 @@
     
           <li class="nav-item">
            <a href="{{url('/favourite')}}"><i class="fa-solid fa-heart"></i></a>
-           <span  class="numbers">0</span>
+           <span  class="numbers fvrt-count">0</span>
           </li>
          
       </div>
@@ -134,7 +134,7 @@
    </footer>
 <!-- Jquery -->
 
-<script defer src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
 <!-- Bootstrap script -->
