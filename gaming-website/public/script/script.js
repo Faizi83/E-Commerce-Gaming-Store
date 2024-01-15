@@ -14,6 +14,7 @@
 
 // Call back everytime
   updateCartCount();
+  updateTotalPrice() 
 
 // update cart numbers
   function updateCartCount() {
@@ -29,6 +30,28 @@
             console.error('Error fetching cart count:', error);
         }
     });
+}
+
+
+// update cart Prices
+
+function updateTotalPrice() {
+  $.ajax({
+      url: '/get-total-price',
+      type: 'GET',
+      dataType:'json',
+      success: function (response) {
+          if (response.hasOwnProperty('totalPrice')) {
+              // Update the HTML element displaying the total price
+              $('#total-price').text('Total: $' + response.totalPrice.toFixed(2));
+          } else {
+              console.log('Response does not contain totalPrice property.');
+          }
+      },
+      error: function (error) {
+          console.log(error.responseJSON.message);
+      }
+  });
 }
 
 
@@ -69,10 +92,6 @@ $(document).ready(function(){
 
       success: function(response){
       
-                 
-               
-
-                  // Update localStorage with the new cart number
                 
         alert(response.status)
        
@@ -88,6 +107,7 @@ $(document).ready(function(){
 
   })
 })
+
 
 
 
@@ -115,9 +135,10 @@ $(document).ready(function () {
           success: function (response) {
               console.log(response.message);
               currentButton.closest('.cart-item').remove();
-              // After successful removal, update the cart count
+
+              // Callbacks for price and counts
               updateCartCount();
-              console.log(updateCartCount());
+              updateTotalPrice();
 
           },
           error: function (error) {

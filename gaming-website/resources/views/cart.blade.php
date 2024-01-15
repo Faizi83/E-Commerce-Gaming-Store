@@ -51,7 +51,7 @@
 
 
   
-    @foreach ($cart as $item)
+    {{-- @foreach ($cart as $item)
     <div class="cart-item pt-5 mt-3" data-item-id="{{ $item->game_id }}">
         <div class="row">
             <div class="col-md-3">
@@ -81,7 +81,39 @@
       <h4>Total: $39.98</h4>
       <button class="btn btn-success">Checkout</button>
     </div>
-  </div>
+  </div> --}}
+  {{-- @php
+        $totalPrice = 0; // Initialize the total price variable
+    @endphp --}}
+
+    @foreach ($cart as $item)
+        <div class="cart-item pt-5 mt-3" data-item-id="{{ $item->game_id }}">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="cart-img">
+                        <img src="{{ $item->game_image }}" alt="Product Image" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="pt-5">{{ $item->game_name }} </h5>
+                </div>
+                <div class="col-md-3 text-end">
+                    <p>Price: ${{ $item->game_price }}</p>
+                    <p>Quantity: {{ $item->game_qty }}</p>
+                    <button class="btn btn-danger remove-item"> <i class="fas fa-trash"></i> Remove</button>
+                </div>
+            </div>
+            {{-- @php
+                $totalPrice += $item->game_price * $item->game_qty; // Update the total price
+            @endphp --}}
+        </div>
+    @endforeach
+
+    <div class="text-end mt-4 checkout">
+      <h4 id="total-price"></h4>
+        <button class="btn btn-success">Checkout</button>
+    </div>
+</div>
 
   @endsection
 

@@ -178,6 +178,18 @@ class queries extends Controller
         return response()->json(['cartCount' => $cartCount]);
     }
     
+    public function PriceCount()
+{
+  
+    $cartItems = game_cart::all();
+    $totalPrice = 0;
+
+    foreach ($cartItems as $item) {
+        $totalPrice += $item->game_price * $item->game_qty;
+    }
+
+    return response()->json(['totalPrice' => $totalPrice]);
+}
     
 };
 

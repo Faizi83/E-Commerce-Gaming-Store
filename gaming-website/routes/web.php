@@ -63,5 +63,9 @@ Route::get('/games', [queries::class, 'search']);
 Route::get('/get-cart-count', [queries::class, 'CartCount']);
 
 
+Route::get('/get-total-price', [queries::class, 'PriceCount']);
+
+
+
 
 
