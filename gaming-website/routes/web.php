@@ -31,8 +31,6 @@ Route::get('/cart',[queries::class,'cart']);
 Route::get('/favourite',[queries::class,'favourite']);
 
 
-
-
 Route::get('/games-page/{id}',[queries::class,'singleProducts']);
 
 Route::get('/more',[queries::class,'more']);
@@ -40,24 +38,13 @@ Route::get('/more',[queries::class,'more']);
 Route::post('/add-product', [queries::class, 'store']);
 
 
-
 Route::post('/add-to-cart', [queries::class, 'addTocart']);
-
-
-
 
 
 Route::delete('/delete/{id}', [queries::class, 'removeItem'])->name('cart.remove');
 
 
-
-
-
-
 Route::get('/games', [queries::class, 'search']);
-
-
-
 
 
 Route::get('/get-cart-count', [queries::class, 'CartCount']);

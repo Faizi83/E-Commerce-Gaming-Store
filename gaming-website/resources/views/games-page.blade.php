@@ -79,7 +79,6 @@
       <h2 class="game_price">${{$games->product_price}}</h2>
       <input type="hidden" class="game_id" value="{{$games->id}}">
       <input type="number" class="game_qty" value="1" min="1" max="5">
-      {{-- <button class="buy-btn">Add To cart</button> --}}
       <button class="buy-btn">Add To Cart</button>
 
 

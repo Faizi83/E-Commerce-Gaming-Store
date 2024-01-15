@@ -55,6 +55,7 @@ function updateTotalPrice() {
 }
 
 
+
 // Adding  cart items
 
 
@@ -90,15 +91,27 @@ $(document).ready(function(){
         'game_desc': game_desc,
       },
 
-      success: function(response){
-      
-                
-        alert(response.status)
-       
-        updateCartCount();
-       
+    success: function(response) {
+      console.log(response.status)
+    // Use SweetAlert with custom styling
+    Swal.fire({
+      icon: response.status === `${game_name} already added to cart` ? 'error' : 'success',
+      title: response.status === `${game_name} already added to cart` ? 'Error!' : 'Done!',
+      text: response.status,
+      confirmButtonColor: response.status === `${game_name} already added to cart` ? 'red' : 'rgb(0, 119, 255)',
+      confirmButtonText: 'OK',
+      background: '#060710',
+      iconColor: response.status === `${game_name} already added to cart` ? 'red' : 'rgb(0, 119, 255)',
+  });
+  
+  
+ 
+  
+  
 
-      },
+    // Call your updateCartCount function
+    updateCartCount();
+},
       error: function (error) {
       console.log(error);
   }
@@ -148,4 +161,6 @@ $(document).ready(function () {
       });
   });
 });
+
+
 

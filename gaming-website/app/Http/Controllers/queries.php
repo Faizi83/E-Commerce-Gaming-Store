@@ -113,7 +113,7 @@ class queries extends Controller
     
         if ($prod_check) {
             if (game_cart::where('game_id', $game_id)->exists()) {
-                return response()->json(['status' => $game_name . " Game already added to cart"]);
+                return response()->json(['status' => $game_name . " already added to cart"]);
             } else {
                 $cartItem = new game_cart();
                 $cartItem->game_id = $game_id;
@@ -163,7 +163,7 @@ class queries extends Controller
                 $queryBuilder->where('category', $category);
             })
             ->get();
-
+            
             $allProducts = \DB::table('products')->get();
     
             return view('games', compact('products', 'allProducts','query'));
