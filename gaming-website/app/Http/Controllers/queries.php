@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\game_cart;
+use App\Models\favourite;
 use Cart;
 
 
@@ -149,7 +150,6 @@ class queries extends Controller
 
 
 
-
     public function search(Request $request)
     {
         $query = $request->input('search');
@@ -191,6 +191,48 @@ class queries extends Controller
     return response()->json(['totalPrice' => $totalPrice]);
 }
     
+
+
+public function addTofvrt(Request $req) {
+    $fav_id = $req->get('fav_id');
+
+    $fav_name = $req->get('fav_name');
+    $fav_image = $req->get('fav_image');
+    $fav_price = (float) str_replace('$', '', $req->get('fav_price'));
+    $fav_del_price = (float) str_replace('$','',  $req->get('fav_del_price'));
+    $fav_rating = $req->get('fav_rating');
+
+
+    $prod_check = \DB::table('products')->where('id', $fav_id)->exists();
+
+    if ($prod_check) {
+        if (favourite::where('fav_id', $fav_id)->exists()) {
+            return response()->json(['status' => $fav_name . " already added to favourite"]);
+        } else {
+            $fvrtItem = new favourite();
+            $fvrtItem->fav_id = $fav_id;
+            $fvrtItem->fav_name = $fav_name;
+            $fvrtItem->fav_image = $fav_image;
+            $fvrtItem->fav_price = $fav_price;
+            $fvrtItem->fav_del_price = $fav_del_price;
+            $fvrtItem->fav_rating = $fav_rating;
+          
+            $fvrtItem->save();
+            return response()->json(['status' => $fav_name . " added to favourite"]);
+        }
+    } else {
+        return response()->json(['status' => "Product with ID " . $fav_id . " not found"]);
+    }
+}
+
+
+
+
+
+
+
+
+
 };
 
 

@@ -41,6 +41,8 @@ Route::post('/add-product', [queries::class, 'store']);
 Route::post('/add-to-cart', [queries::class, 'addTocart']);
 
 
+Route::post('/add-to-favourite', [queries::class, 'addTofvrt']);
+
 Route::delete('/delete/{id}', [queries::class, 'removeItem'])->name('cart.remove');
 
 

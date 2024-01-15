@@ -44,7 +44,8 @@
 
 
   <!-- Favourite Games Section -->
-    
+
+
 <section class="fav-games">
         <h2 class="text-center">Favourite Games</h2>
         <div class="container mt-5">

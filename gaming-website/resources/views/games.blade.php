@@ -101,19 +101,20 @@
         @if (count($products) > 0)
         @foreach ($products as $product)
     <div class="col-md-4 col-lg-3 col-6">
-        <div class="card product-card">
-          <a href="{{ url('games-page/' . $product->id) }}"><img src="{{ asset('storage/' . str_replace('public/', '', $product->product_image)) }}" class="card-img-top product-image img-fluid" alt="Game Title"></a>
+        <div class="card product-card fav_data">
+          <a href="{{ url('games-page/' . $product->id) }}"><img src="{{ asset('storage/' . str_replace('public/', '', $product->product_image)) }}" class="card-img-top product-image img-fluid fav-image" alt="Game Title"></a>
+          <input class="fav-id" type="hidden" value="{{$product->id}}">
 
             <div class="card-body product-details">
                 <div class="content d-flex justify-content-between">
-                    <h2 class="card-title product-title">{{ $product->product_name }}</h2>
+                    <h2 class="card-title product-title fav-name">{{ $product->product_name }}</h2>
                     <div class="price d-flex justify-content-between"> 
-                        <p><del>${{$product->product_del_price}}</del></p>
-                        <p class="px-1">${{ $product->product_price }}</p>
+                        <p class="fav-del-price"><del>${{$product->product_del_price}}</del></p>
+                        <p class="px-1 fav-price">${{ $product->product_price }}</p>
                     </div>
                 </div>
                 <div class="content d-flex justify-content-between">
-                    <div class="stars d-flex justify-content-between">
+                    <div class="stars d-flex justify-content-between " data-rating="{{ $product->product_rating }}">
                         @for ($i = 1; $i <= 5; $i++)
                             @if ($i <= $product->product_rating)
                                 <i class="fa-solid fa-star"></i>
@@ -122,7 +123,7 @@
                             @endif
                         @endfor
                     </div>
-                    <i class="fa-solid fa-heart favorite-icon" data-product-id="{{ $product->id }}"></i>
+                    <i class="fa-solid fa-heart favorite-icon"></i>
                 </div>
             </div>
         </div>

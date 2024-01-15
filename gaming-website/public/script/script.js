@@ -164,3 +164,58 @@ $(document).ready(function () {
 
 
 
+
+
+// Adding  favourite items
+
+
+$(document).ready(function(){
+  $('.favorite-icon').click(function (e){
+    e.preventDefault();
+    var fav_id = $(this).closest('.fav_data').find('.fav-id').val();
+    var fav_name = $(this).closest('.fav_data').find('.fav-name').text();
+    var fav_image = $(this).closest('.fav_data').find('.fav-image').attr('src');
+    var fav_price = $(this).closest('.fav_data').find('.fav-price').text();
+    var fav_del_price = $(this).closest('.fav_data').find('.fav-del-price').text();
+    var fav_rating = $(this).closest('.fav_data').find('.stars').data('rating'); 
+     
+
+
+    $.ajaxSetup({
+  headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  }
+});
+
+    
+    $.ajax({
+      method: "POST",
+      url: "/add-to-favourite",
+      data:{
+        'fav_id': fav_id,
+        'fav_name': fav_name,
+        'fav_image': fav_image,
+        'fav_price': fav_price,
+        'fav_del_price': fav_del_price,
+        'fav_rating': fav_rating,
+      },
+
+    success: function(response) {
+      alert(response.status)
+
+  
+
+    // Call your updateCartCount funct
+},
+      error: function (error) {
+      console.log(error);
+  }
+    })
+
+
+  })
+})
+
+
+
+
