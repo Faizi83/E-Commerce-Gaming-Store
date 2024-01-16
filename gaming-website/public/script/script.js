@@ -14,7 +14,8 @@
 
 // Call back everytime
   updateCartCount();
-  updateTotalPrice() 
+  updateFvrtCount(); 
+  updateTotalPrice(); 
 
 // update cart numbers
   function updateCartCount() {
@@ -30,6 +31,22 @@
             console.error('Error fetching cart count:', error);
         }
     });
+}
+
+// update fvrt numbers
+function updateFvrtCount() {
+  $.ajax({
+      url:'/get-fvrt-count',
+      type: 'GET',
+      dataType: 'json',
+      success: function (response) {
+        // console.log(response.cartCount)
+          $('.fvrt-count').text(response.fvrtCount);
+      },
+      error: function (error) {
+          console.error('Error fetching cart count:', error);
+      }
+  });
 }
 
 
@@ -102,6 +119,7 @@ $(document).ready(function(){
       confirmButtonText: 'OK',
       background: '#060710',
       iconColor: response.status === `${game_name} already added to cart` ? 'red' : 'rgb(0, 119, 255)',
+ 
   });
   
   
@@ -178,6 +196,7 @@ $(document).ready(function(){
     var fav_price = $(this).closest('.fav_data').find('.fav-price').text();
     var fav_del_price = $(this).closest('.fav_data').find('.fav-del-price').text();
     var fav_rating = $(this).closest('.fav_data').find('.stars').data('rating'); 
+
      
 
 
@@ -186,6 +205,8 @@ $(document).ready(function(){
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
   }
 });
+
+
 
     
     $.ajax({
@@ -201,11 +222,27 @@ $(document).ready(function(){
       },
 
     success: function(response) {
-      alert(response.status)
+      // console.log(response.status)
+  
+      const swalOptions = {
+        title: response.status === `${fav_name} already added to favourite` ? 'Already in Favorites' : 'Item Added to Favorites',
+        iconHtml: '<i style="color:rgb(201, 0, 0);" class="fa-solid fa-heart"></i>',
+        showConfirmButton: false,
+        timer: 1000, // Set the timer to close the alert after 2000 milliseconds (2 seconds)
+        customClass: {
+            popup: 'custom-swal-popup',
+            title: 'custom-swal-title',
+        },
+    };
 
+    // Display SweetAlert
+    Swal.fire(swalOptions);
+      updateFvrtCount()
+
+    
   
 
-    // Call your updateCartCount funct
+
 },
       error: function (error) {
       console.log(error);
@@ -219,3 +256,53 @@ $(document).ready(function(){
 
 
 
+
+$(document).ready(function () {
+
+  $('.remove-fvrt').on('click', function () {
+      var itemId = $(this).closest('.fvrt-box').data('item-id');
+      var currentButton = $(this);
+
+      $.ajaxSetup({
+      headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+           }
+         });
+
+      $.ajax({
+          url: '/del/' + itemId,
+          type: 'DELETE',
+          success: function (response) {
+              // console.log(response.message);
+              currentButton.closest('.fvrt-box').remove();
+              const swalOptions = {
+                title: 'Item removed from Favorites',
+                iconHtml: '<i class="fa-solid fa-heart"></i>',
+                showConfirmButton: false,
+                timer: 1000, // Set the timer to close the alert after 2000 milliseconds (2 seconds)
+                customClass: {
+                    popup: 'custom-swal-popup',
+                    title: 'custom-swal-title',
+                },
+            };
+        
+            // Display SweetAlert
+            Swal.fire(swalOptions);
+
+
+
+
+
+
+
+              // Callbacks for fvrt count
+              updateFvrtCount(); 
+
+          },
+          error: function (error) {
+              console.log(error.responseJSON.message);
+          }
+          
+      });
+  });
+});

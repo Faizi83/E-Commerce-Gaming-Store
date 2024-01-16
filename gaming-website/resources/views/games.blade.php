@@ -49,14 +49,27 @@
     font-size:2.3rem;
     font-weight:400;
      color:rgba(0, 90, 194, 0.5);
-     background-color:rgb(0, 0, 0);  
-    
-     
-     
+     background-color:rgba(0, 0, 0, 0.521);  
   }
 
-  
 
+  .fav_data .content .favorite-icon:hover{
+    color: rgb(201, 0, 0);
+    
+  }
+
+
+  .custom-swal-popup {
+    width: 200px;
+    border-radius: 29px;
+    background-color:#000000;
+    color: white;
+    transition: opacity 0.5s ease; /* Smooth transition effect */
+}
+
+.custom-swal-title {
+    font-size: 12px;
+}
 
 </style>
 

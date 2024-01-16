@@ -45,9 +45,13 @@ Route::post('/add-to-favourite', [queries::class, 'addTofvrt']);
 
 Route::delete('/delete/{id}', [queries::class, 'removeItem'])->name('cart.remove');
 
+Route::delete('/del/{id}', [queries::class, 'removefvrt'])->name('fvrt.remove');
+
 
 Route::get('/games', [queries::class, 'search']);
 
+
+Route::get('/get-fvrt-count', [queries::class, 'FvrtCount']);
 
 Route::get('/get-cart-count', [queries::class, 'CartCount']);
 

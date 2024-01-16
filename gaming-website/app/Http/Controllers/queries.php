@@ -24,14 +24,8 @@ class queries extends Controller
     public function more(){
         return view('more');
     }
-    public function games(){
-        return view('games');
-    }
+ 
        
-    public function favourite(){
-        return view('favourite');
-    }
-    
     public function productpage(){
         return view('games-page');
     }
@@ -40,7 +34,7 @@ class queries extends Controller
     {
        
         
-        // Echo the value for debugging
+      
        
         $cart = game_cart::all();
 
@@ -48,6 +42,11 @@ class queries extends Controller
 
     
         return view('cart', compact('cart'));
+    }
+
+    public function favourite(){
+        $fav_data = favourite::all();
+        return view('favourite', compact('fav_data'));
     }
     
 
@@ -144,6 +143,19 @@ class queries extends Controller
     }
 
 
+    public function removefvrt($id)
+    {
+        $item = favourite::where('fav_id', $id)->first();
+    
+        if ($item) {
+            $item->delete();
+            return response()->json(['message' => 'Item removed successfully']);
+        }
+    
+        return response()->json(['message' => 'Item not found'], 404);
+    }
+
+
 
 
 
@@ -173,9 +185,16 @@ class queries extends Controller
 
     public function CartCount()
     {
-        $cartCount = game_cart::count(); // Adjust this according to your actual logic for counting items in the cart
+        $cartCount = game_cart::count(); 
 
         return response()->json(['cartCount' => $cartCount]);
+    }
+
+    public function FvrtCount()
+    {
+        $fvrtCount = favourite::count(); // Adjust this according to your actual logic for counting items in the cart
+
+        return response()->json(['fvrtCount' => $fvrtCount]);
     }
     
     public function PriceCount()
