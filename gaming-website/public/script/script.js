@@ -188,6 +188,18 @@ $(document).ready(function () {
 
 
 $(document).ready(function(){
+
+
+  $('.favorite-icon').each(function () {
+    var fav_id = $(this).closest('.fav_data').find('.fav-id').val();
+    // Check if the item is in localStorage
+    if (localStorage.getItem('fav_' + fav_id)) {
+      $(this).addClass('favourite-icon');
+    }
+  });
+
+
+
   $('.favorite-icon').click(function (e){
     e.preventDefault();
     var fav_id = $(this).closest('.fav_data').find('.fav-id').val();
@@ -197,6 +209,7 @@ $(document).ready(function(){
     var fav_del_price = $(this).closest('.fav_data').find('.fav-del-price').text();
     var fav_rating = $(this).closest('.fav_data').find('.stars').data('rating'); 
 
+    var $heartIcon = $(this);
      
 
 
@@ -237,6 +250,12 @@ $(document).ready(function(){
 
     // Display SweetAlert
     Swal.fire(swalOptions);
+      
+    $heartIcon.addClass('favourite-icon');
+          // Store the favorited item in localStorage
+          localStorage.setItem('fav_' + fav_id, true);
+
+
       updateFvrtCount()
 
     
@@ -257,52 +276,62 @@ $(document).ready(function(){
 
 
 
+
+
 $(document).ready(function () {
+
+  var key;
 
   $('.remove-fvrt').on('click', function () {
       var itemId = $(this).closest('.fvrt-box').data('item-id');
+
+      function removeFromLocalStorage(itemId) {
+        key = 'fav_' + itemId;
+        // Remove the item from local storage
+        localStorage.removeItem(key);
+        // console.log(key); // If you want to log the key, you can do it here
+      }
+
       var currentButton = $(this);
 
       $.ajaxSetup({
-      headers: {
-      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-           }
-         });
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+      });
 
       $.ajax({
-          url: '/del/' + itemId,
-          type: 'DELETE',
-          success: function (response) {
-              // console.log(response.message);
-              currentButton.closest('.fvrt-box').remove();
-              const swalOptions = {
-                title: 'Item removed from Favorites',
-                iconHtml: '<i class="fa-solid fa-heart"></i>',
-                showConfirmButton: false,
-                timer: 1000, // Set the timer to close the alert after 2000 milliseconds (2 seconds)
-                customClass: {
-                    popup: 'custom-swal-popup',
-                    title: 'custom-swal-title',
-                },
-            };
-        
-            // Display SweetAlert
-            Swal.fire(swalOptions);
+        url: '/del/' + itemId,
+        type: 'DELETE',
+        success: function (response) {
+          currentButton.closest('.fvrt-box').remove();
+          const swalOptions = {
+            title: 'Item removed from Favorites',
+            iconHtml: '<i class="fa-solid fa-heart"></i>',
+            showConfirmButton: false,
+            timer: 1000,
+            customClass: {
+              popup: 'custom-swal-popup',
+              title: 'custom-swal-title',
+            },
+          };
 
+          Swal.fire(swalOptions);
 
+          removeFromLocalStorage(itemId); // Call removeFromLocalStorage with itemId
+          console.log(key); // If you want to log the key, you can do it here
 
-
-
-
-
-              // Callbacks for fvrt count
-              updateFvrtCount(); 
-
-          },
-          error: function (error) {
-              console.log(error.responseJSON.message);
-          }
-          
+          // Callbacks for fvrt count
+          updateFvrtCount();
+        },
+        error: function (error) {
+          console.log(error.responseJSON.message);
+        }
       });
   });
+
+  // Function to update favorite count
+  function updateFvrtCount() {
+    // Your logic to update the favorite count goes here
+  }
 });

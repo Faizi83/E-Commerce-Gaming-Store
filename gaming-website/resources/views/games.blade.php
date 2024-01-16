@@ -58,6 +58,11 @@
     
   }
 
+  .fav_data .content .favourite-icon {
+  color:  rgb(201, 0, 0);
+}
+
+
 
   .custom-swal-popup {
     width: 200px;
