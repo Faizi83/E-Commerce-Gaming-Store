@@ -591,11 +591,11 @@ footer hr{
     color: red;
     } */
 
-.img-box {
-    width: 520px;
-    height: 550px;
-}
-
+    .img-box {
+        width: 520px;
+        height: 550px;
+    }
+    
 
 .col-lg-5 {
     min-height: 600px; /* Adjust this value based on your needs */
@@ -686,7 +686,7 @@ footer hr{
     @media only screen and (max-width:1400px){
     .img-box {
         width:100%;
-        height:auto;
+        height: calc(100% - 29%);
         max-width: 550px;    
     }
 
@@ -736,6 +736,7 @@ footer hr{
     padding: 4px 77px;
 }
 
+
    
 
 
@@ -749,7 +750,7 @@ footer hr{
 
         .img-box {
             width:100%;
-            height:auto;
+            height: calc(100% - 32%);
             max-width: 550px;
         }
 
@@ -820,7 +821,7 @@ footer hr{
 
         .img-box {
             width:100%;
-            height:auto;
+            /* height:auto; */
             max-width: 470px;
          
            
@@ -995,8 +996,8 @@ footer hr{
 
     @media only screen and (max-width: 480px ) {
         .product-card {
-            width: 145px;
-            height: 265px;
+            width: calc(100% - 20%);
+            height: calc(100% - 2%);
           }
           
           .product-page h6{
@@ -1023,6 +1024,18 @@ footer hr{
             font-size:14px;
         
         }
+
+        .fav-games .fav-para h3{
+
+
+            font-size: 22px;
+            
+            color: rgba(0, 110, 255, 0.822);
+          
+          
+            
+          }
+          
         
         .upcoming img{
             box-shadow: 10px 10px 1px rgba(71, 69, 71, 0.103);
@@ -1098,8 +1111,20 @@ footer hr{
          }
          
          
-
+         .img-box {
+            width: 100%;
+            height: calc(100% - 45%);
+        }
+        
     
+
+        .carousel-caption .link a{
+            margin-bottom:12px;
+            padding: 4px 1rem;
+            font-size: 12px;
+           
+            
+        }
       
     
     }

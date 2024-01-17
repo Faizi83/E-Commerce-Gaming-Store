@@ -16,9 +16,9 @@ class queries extends Controller
 
     public function home()
     {
-        $prod = \DB::table('products')->get(); 
+        $products = \DB::table('products')->get(); 
     
-        return view('index', compact('prod'));
+        return view('index', compact('products'));
       
     }
     public function more(){

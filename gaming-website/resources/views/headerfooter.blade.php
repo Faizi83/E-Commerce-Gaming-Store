@@ -73,16 +73,16 @@
           <hr>
         
           <p> 
-            <a class="text-white text-decoration-none" href="#">Farcry 6</a>
+            <a class="text-white text-decoration-none" href="/games-page/92">Farcry 6</a>
           </p>
           <p>
-            <a class="text-white text-decoration-none" href="#">WWE 2k23</a>
+            <a class="text-white text-decoration-none" href="/games-page/93">WWE 2k23</a>
           </p>
           <p>
-            <a class="text-white text-decoration-none" href="#">Fifa 2023</a>
+            <a class="text-white text-decoration-none" href="/games-page/109">Fifa 2023</a>
           </p>
           <p>
-            <a class="text-white text-decoration-none" href="#">Tekken 7</a>
+            <a class="text-white text-decoration-none" href="/games-page/91">Tekken 7</a>
           </p>
 
         </div>
@@ -94,16 +94,16 @@
          
           
           <p>
-            <a class="text-white text-decoration-none" href="#">Rockstar Games</a>
+            <a class="text-white text-decoration-none" href="https://www.rockstargames.com/">Rockstar Games</a>
           </p>
           <p>
-            <a class="text-white text-decoration-none" href="#">Ubisoft Games</a>
+            <a class="text-white text-decoration-none" href="https://www.ubisoft.com/en-us/games">Ubisoft Games</a>
           </p>
           <p>
-            <a class="text-white text-decoration-none" href="#">Electronic Arts</a>
+            <a class="text-white text-decoration-none" href="https://www.ea.com/">Electronic Arts</a>
           </p>
           <p>
-            <a class="text-white text-decoration-none" href="#">Activsions</a>
+            <a class="text-white text-decoration-none" href="https://www.activision.com/games">Activsions</a>
           </p>
         </div>
 

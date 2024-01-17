@@ -33,6 +33,8 @@
     background-position: center;
     background-size: cover;
     position: relative;
+ 
+   
   }
 
 
@@ -55,6 +57,27 @@
     
   }
 
+  .fav-para{
+    display: flex;
+    justify-content: center;
+    padding-top:10rem;
+    width:100%;
+
+    min-height:70% ;
+
+
+
+  }
+.fav-para h3{
+
+
+  font-size: 2rem;
+  
+  color: rgba(0, 119, 255, 0.822);
+
+
+  
+}
 
 
   </style>
@@ -70,9 +93,11 @@
 
 
 <section class="fav-games">
+  @if(count($fav_data) > 0)
         <h2 class="text-center">Favourite Games</h2>
         <div class="container mt-5">
           <div class="row g-5">
+           
             @foreach ($fav_data as $data )
               
         
@@ -110,8 +135,15 @@
               </div>
             </div>
             @endforeach
+            @else
+            <div class="fav-para">
+
+              <h3>You don't have Favourite Items</h3>
+            </div>
+            @endif
        
  
+
 
           
 
@@ -119,8 +151,8 @@
     
       </section>
 
-
       @endsection
+
 
 </body>
 

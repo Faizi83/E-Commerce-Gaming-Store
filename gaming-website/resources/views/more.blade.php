@@ -59,7 +59,7 @@
                 <div class="carousel-caption d-flex align-items-center justify-content-center">
                   <div class="link">
               
-                    <a href="#" class="btn btn-danger">Watch Now</a>
+                    <a href="https://www.ubisoft.com/en-us/game/assassins-creed" class="btn btn-danger">Watch Now</a>
                   </div>
                   
 
@@ -71,7 +71,7 @@
                 <div class="carousel-caption d-flex align-items-center justify-content-center">
                   <div class="link">
               
-                    <a href="#" class="btn btn-danger">Watch Now</a>
+                    <a href="https://www.ubisoft.com/en-us/game/assassins-creed" class="btn btn-danger">Watch Now</a>
                   </div>
                 </div>
               </div>
@@ -80,7 +80,7 @@
                 <div class="carousel-caption d-flex align-items-center justify-content-center">
                   <div class="link">
                    
-                    <a href="#" class="btn btn-danger">Watch Now</a>
+                    <a href="https://www.ubisoft.com/en-us/game/assassins-creed" class="btn btn-danger">Watch Now</a>
                   </div>
                 </div>
               </div>
@@ -99,87 +99,105 @@
 </section>
 
 <!-- Trending-cards -->
-<section class="more-cards">
+<section class="more-cards pb-5">
   <div class="container pt-5">
     <div class="row g-5">
       <div class="col-lg-4 col-md-4 col-12">
         <div class="card">
+          <a href="https://www.fortnite.com/" class="text-decoration-none">
           <img src="/images/more-cards1.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <p class="card-text">Fortnite's unique blend of shooting mechanics, building structures on-the-fly, and constantly.</p>
           </div>
+          </a>
         </div>
 
       </div>
       <div class="col-lg-4 col-md-4 col-12">
         <div class="card">
+          <a href="https://overwatch.blizzard.com/en-us/" class="text-decoration-none">
           <img src="/images/more-cards2.jpeg" class="card-img-top" alt="...">
           <div class="card-body">
             <p class="card-text">Overwatch's new season define is its diverse roster of characters,with their own distinct.</p>
           </div>
+        </a>
         </div>
 
       </div>
       <div class="col-lg-4 col-md-4 col-12">
           <div class="card">
+            <a href="https://avengers.crystald.com/" class="text-decoration-none">
           <img src="/images/more-cards3.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <p class="card-text">Marvel's Avengers" is an action-adventure game that brings together iconic Marvel superheroes.</p>
           </div>
+        </a>
         </div>
 
       </div>
       <div class="col-lg-4 col-md-4 col-12">
           <div class="card">
+            <a href="https://forza.net/horizon/" class="text-decoration-none">
           <img src="/images/more-cards4.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <p class="card-text">Forza Horizon games typically and landscapes while participating in a variety of racing event.</p>
           </div>
+        </a>
         </div>
 
       </div>
       <div class="col-lg-4 col-md-4 col-12">
           <div class="card">
+            <a href="https://www.counter-strike.net/cs2" class="text-decoration-none">
           <img src="/images/more-cards5.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <p class="card-text">Counter-Strike 2 received generally favorable reviews from critics. In contrast, players game.</p>
           </div>
+        </a>
         </div>
 
       </div>
       <div class="col-lg-4 col-md-4 col-12">
           <div class="card" >
+            <a href="https://www.rockstargames.com/gta-online" class="text-decoration-none">
           <img src="/images/more-cards6.jpg" class="card-img-top" alt="...">
           <div class="card-body">
             <p class="card-text">Grand Theft Auto V Online is the multiplayer component of the critically game actions.</p>
           </div>
+        </a>
         </div>
 
       </div>
       <div class="col-lg-4 col-md-4 col-12">
           <div class="card" >
-          <img src="/images/more-cards6.jpg" class="card-img-top" alt="...">
+            <a href="https://www.ea.com/compete/fifa-online/events/eacc-autumn-2020" class="text-decoration-none">
+          <img src="/images/more-cards7.jpg" class="card-img-top" alt="...">
           <div class="card-body">
-            <p class="card-text">Grand Theft Auto V Online is the multiplayer component of the critically game actions.</p>
+            <p class="card-text">Immerse yourself in the thrilling world of football with FIFA Online on PC, where enjoy.</p>
           </div>
+        </a>
         </div>
 
       </div>
       <div class="col-lg-4 col-md-4 col-12">
           <div class="card" >
-          <img src="/images/more-cards6.jpg" class="card-img-top" alt="...">
+            <a href="https://pubg.com/en-na" class="text-decoration-none">
+          <img src="/images/more-cards8.jpeg" class="card-img-top" alt="...">
           <div class="card-body">
-            <p class="card-text">Grand Theft Auto V Online is the multiplayer component of the critically game actions.</p>
+            <p class="card-text">"Dive into the heart-pounding battlegrounds with PUBG, a pioneer in the battle royale genre.</p>
           </div>
+        </a>
         </div>
 
       </div>
       <div class="col-lg-4 col-md-4 col-12">
           <div class="card" >
-          <img src="/images/more-cards6.jpg" class="card-img-top" alt="...">
+            <a href="https://www.callofduty.com/" class="text-decoration-none">
+          <img src="/images/more-cards9.png" class="card-img-top" alt="...">
           <div class="card-body">
-            <p class="card-text">Grand Theft Auto V Online is the multiplayer component of the critically game actions.</p>
+            <p class="card-text">"Engage in adrenaline-pumping warfare with Call of Duty Online on PC, where the enjoyed.</p>
           </div>
+            </a>
         </div>
 
       </div>
