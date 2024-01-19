@@ -76,6 +76,11 @@
     font-size: 12px;
 }
 
+
+
+
+
+
 </style>
 
 <body>
@@ -112,7 +117,7 @@
 
   <!-- Games Section -->
   <section class="top-games mt-5">
-    <div class="container mt-5">
+    <div class="container mt-5 t-g">
       <div class="row g-5">
   
         {{-- For checking game searched or not --}}
@@ -197,15 +202,29 @@
 @endif
   
       </div>  
+  
     </div>
+ 
 
 
+
+    <div class="container d-flex justify-content-center game-pages  mt-5 mb-5">
+
+      <ul class="pagination">
+        <li class="page-item "><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item  active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </div>
 
 
 
 
   </section>
   @endsection
+  
 
  
 

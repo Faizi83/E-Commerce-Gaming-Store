@@ -666,6 +666,18 @@ footer hr{
 
 
 
+ .top-games .game-pages .pagination .page-item .page-link {
+    color:var(--secondry-color);
+    background-color: black;
+    border: none;
+    box-shadow:2px 3px 4px rgb(2, 2, 2);
+
+   
+}
+
+.top-games .game-pages .pagination  .active .page-link{
+    color: var(--main-color);
+} 
 
 
 
@@ -673,9 +685,6 @@ footer hr{
 
 
 
-
-
-        
   
    
     
@@ -738,7 +747,6 @@ footer hr{
 
 
    
-
 
 
 
