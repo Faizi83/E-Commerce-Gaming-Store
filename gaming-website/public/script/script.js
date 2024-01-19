@@ -323,6 +323,7 @@ $(document).ready(function () {
 
           // Callbacks for fvrt count
           updateFvrtCount();
+        
         },
         error: function (error) {
           console.log(error.responseJSON.message);
@@ -330,8 +331,5 @@ $(document).ready(function () {
       });
   });
 
-  // Function to update favorite count
-  function updateFvrtCount() {
-    // Your logic to update the favorite count goes here
-  }
+
 });
