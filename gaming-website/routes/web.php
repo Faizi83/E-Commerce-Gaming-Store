@@ -16,9 +16,8 @@ use App\Http\Controllers\queries;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/',[queries::class,'home']);
 
 Route::get('/admin', function (){
     return view('adminpanel');
